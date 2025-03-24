@@ -14,7 +14,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     if (!query){
-        // navigate("/");
+        navigate("/");
         return;
     } 
 
@@ -24,9 +24,9 @@ const SearchResults = () => {
       setMovies(response?.results || []);
       setLoading(false);
 
-    //   if (response?.results.length === 0) {
-    //     setTimeout(() => navigate("/"), 2000);
-    //   }
+      if (response?.results.length === 0) {
+        setTimeout(() => navigate("/"), 2000);
+      }
     };
 
     fetchSearchResults();
